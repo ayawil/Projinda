@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "HFf0rxi8Qzcd8XM9CL2LJVJPzZb0XgOm+zIWQdGX7BWiySk/LTaKhonfTC9Wyb9o3phCVa3xi9a/hW6bHFtpqw==",
+  "dgSpecHash": "XS3pe7aRt4GVXaVQPtBFT8sOStNfie/x4V3iq3iMYGnyJM+Cx51N8hXQx+KsjeHRj9m6A5dPv3kRId0MCMreWw==",
   "success": true,
   "projectFilePath": "/Users/ayawilhelmson/Desktop/inda-21/Projinda/src/src.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/ayawilhelmson/.nuget/packages/microsoft.win32.systemevents/6.0.0/microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "/Users/ayawilhelmson/.nuget/packages/system.drawing.common/6.0.0/system.drawing.common.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
