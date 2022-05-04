@@ -1,16 +1,16 @@
 using System.Drawing;
-class FilterPicture
+class FilterPixel
 {
     private Picture image;
     private int pixelSize;
-    public FilterPicture(Picture image)
+    public FilterPixel(Picture image)
     {
         this.image = image;
         pixelSize = 4;
 
     }
 
-    private void AddFilter()
+    public void AddFilter()
     {
         for (int x = 0; x < image.Lenght(); x += pixelSize)
         {
