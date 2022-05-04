@@ -1,7 +1,7 @@
 using System.Drawing;
 class Picture
 {
-    private Bitmap Image;
+    private Bitmap Image ;
 
     public void create(string location)
     {

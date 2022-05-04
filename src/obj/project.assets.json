@@ -123,19 +123,19 @@
     ]
   },
   "packageFolders": {
-    "/home/fredrik/.nuget/packages/": {}
+    "/Users/ayawilhelmson/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/fredrik/KTH/INDA/Projinda/src/src.csproj",
+      "projectUniqueName": "/Users/ayawilhelmson/Desktop/inda-21/Projinda/src/src.csproj",
       "projectName": "src",
-      "projectPath": "/home/fredrik/KTH/INDA/Projinda/src/src.csproj",
-      "packagesPath": "/home/fredrik/.nuget/packages/",
-      "outputPath": "/home/fredrik/KTH/INDA/Projinda/src/obj/",
+      "projectPath": "/Users/ayawilhelmson/Desktop/inda-21/Projinda/src/src.csproj",
+      "packagesPath": "/Users/ayawilhelmson/.nuget/packages/",
+      "outputPath": "/Users/ayawilhelmson/Desktop/inda-21/Projinda/src/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/fredrik/.nuget/NuGet/NuGet.Config"
+        "/Users/ayawilhelmson/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -179,7 +179,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/162/sdk/6.0.202/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
       }
     }
   }
