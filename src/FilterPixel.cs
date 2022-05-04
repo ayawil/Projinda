@@ -10,11 +10,11 @@ class FilterPicture
 
     }
 
-    private void addFilter()
+    private void AddFilter()
     {
-        for (int x = 0; x < image.lenght(); x += pixelSize)
+        for (int x = 0; x < image.Lenght(); x += pixelSize)
         {
-            for (int y = 0; y < image.height(); y += pixelSize)
+            for (int y = 0; y < image.Height(); y += pixelSize)
             {
                 List<Color> colors = new List<Color>();
 
@@ -26,7 +26,7 @@ class FilterPicture
 
                     }
                 }
-                Color avrg = average(colors);
+                Color avrg = Average(colors);
                 for (int i = 0; i < pixelSize; i++)
                 {
                     for (int j = 0; j < pixelSize; j++)
@@ -39,7 +39,7 @@ class FilterPicture
         }
     }
 
-    private Color average(List<Color> colors)
+    private Color Average(List<Color> colors)
     {
         int g = 0;
         int b = 0;
