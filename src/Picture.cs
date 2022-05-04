@@ -1,6 +1,6 @@
 class Picture
 {
-    private bitmap image;
+    private Bitmap image;
 
     public void create(string location)
     {
@@ -10,7 +10,7 @@ class Picture
         }
         catch(Exception)
         {
-            Console.Writeline("There was a problem saving the file.");
+            Console.WriteLine("There was a problem saving the file.");
         }
     }
 
@@ -24,5 +24,5 @@ class Picture
     public int lenght()
         { return image.lenght; }
     
-    
+
 }
