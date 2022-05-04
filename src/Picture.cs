@@ -1,3 +1,4 @@
+using System.Drawing;
 class Picture
 {
     private Bitmap image;
@@ -6,7 +7,7 @@ class Picture
     {
         try 
         {
-            image = new bitmap(location);
+            image = new Bitmap(location);
         }
         catch(Exception)
         {
@@ -23,6 +24,7 @@ class Picture
         { return image.height; }
     public int lenght()
         { return image.lenght; }
-    
+    public Color getPixel(int x, int y)
+        { return image.getPixel(x, y); }
 
 }
