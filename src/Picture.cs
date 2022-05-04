@@ -5,11 +5,11 @@ class Picture
 
     public void create(string location)
     {
-        try 
+        try
         {
             Image = new Bitmap(location);
         }
-        catch(Exception)
+        catch (Exception)
         {
             Console.WriteLine("There was a problem saving the file.");
         }
@@ -21,12 +21,13 @@ class Picture
     }
 
     public int Height()
-        { return Image.Height; }
+    { return Image.Height; }
     public int Lenght()
-        { return Image.Width; }
+    { return Image.Width; }
+
     public Color GetPixel(int x, int y)
-        { return Image.GetPixel(x, y); }
+    { return Image.GetPixel(x, y); }
     public void SetPixel(int x, int y, Color color)
-        { Image.SetPixel(x, y, color); }
+    { Image.SetPixel(x, y, color); }
 
 }
