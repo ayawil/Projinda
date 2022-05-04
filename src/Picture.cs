@@ -1,33 +1,35 @@
 using System.Drawing;
 class Picture
 {
-    private Bitmap Image ;
+    private Bitmap? image;
 
-    public void create(string location)
+    public Picture()
+    {
+    }
+
+    public void Create(string location)
     {
         try
         {
-            Image = new Bitmap(location);
+            image = new Bitmap(location);
         }
         catch (Exception)
         {
-            Console.WriteLine("There was a problem saving the file.");
+            Console.WriteLine("No picture found.");
         }
     }
 
     public void Export()
-    {
-        Image.Save("export.png");
-    }
+        { image.Save("export.png"); }
 
     public int Height()
-    { return Image.Height; }
+        { return image.Height; }
     public int Lenght()
-    { return Image.Width; }
+        { return image.Width; }
 
     public Color GetPixel(int x, int y)
-    { return Image.GetPixel(x, y); }
+        { return image.GetPixel(x, y); }
     public void SetPixel(int x, int y, Color color)
-    { Image.SetPixel(x, y, color); }
+        { image.SetPixel(x, y, color); }
 
 }

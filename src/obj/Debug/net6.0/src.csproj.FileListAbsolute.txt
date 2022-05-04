@@ -27,3 +27,16 @@
 /Users/ayawilhelmson/Desktop/inda-21/Projinda/src/bin/Debug/net6.0/runtimes/unix/lib/net6.0/System.Drawing.Common.dll
 /Users/ayawilhelmson/Desktop/inda-21/Projinda/src/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Drawing.Common.dll
 /Users/ayawilhelmson/Desktop/inda-21/Projinda/src/obj/Debug/net6.0/src.csproj.CopyComplete
+/home/fredrik/KTH/INDA/Projinda/src/bin/Debug/net6.0/src
+/home/fredrik/KTH/INDA/Projinda/src/bin/Debug/net6.0/src.deps.json
+/home/fredrik/KTH/INDA/Projinda/src/bin/Debug/net6.0/src.runtimeconfig.json
+/home/fredrik/KTH/INDA/Projinda/src/bin/Debug/net6.0/src.dll
+/home/fredrik/KTH/INDA/Projinda/src/bin/Debug/net6.0/src.pdb
+/home/fredrik/KTH/INDA/Projinda/src/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll
+/home/fredrik/KTH/INDA/Projinda/src/bin/Debug/net6.0/System.Drawing.Common.dll
+/home/fredrik/KTH/INDA/Projinda/src/bin/Debug/net6.0/runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll
+/home/fredrik/KTH/INDA/Projinda/src/bin/Debug/net6.0/runtimes/unix/lib/net6.0/System.Drawing.Common.dll
+/home/fredrik/KTH/INDA/Projinda/src/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Drawing.Common.dll
+/home/fredrik/KTH/INDA/Projinda/src/obj/Debug/net6.0/src.csproj.CopyComplete
+/home/fredrik/KTH/INDA/Projinda/src/obj/Debug/net6.0/src.genruntimeconfig.cache
+/home/fredrik/KTH/INDA/Projinda/src/obj/Debug/net6.0/ref/src.dll
