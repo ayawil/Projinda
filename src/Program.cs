@@ -13,10 +13,11 @@ namespace src
             //while(true){
             //Console.WriteLine("Write the location of the picture");
             //string location = Console.ReadLine();
-            string location = "Skog.jpeg";
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "Skog.jpeg");
+            string location = path;
             try
             {
-                picture.create(location);
+                picture.Create(@location);
             }
             catch (Exception)
             {

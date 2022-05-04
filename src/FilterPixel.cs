@@ -7,7 +7,6 @@ class FilterPixel
     {
         this.image = image;
         pixelSize = 4;
-
     }
 
     public void AddFilter()
