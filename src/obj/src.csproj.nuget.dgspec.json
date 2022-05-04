@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ayawilhelmson/Desktop/inda-21/Projinda/src/src.csproj": {}
+    "/home/fredrik/KTH/INDA/Projinda/src/src.csproj": {}
   },
   "projects": {
-    "/Users/ayawilhelmson/Desktop/inda-21/Projinda/src/src.csproj": {
+    "/home/fredrik/KTH/INDA/Projinda/src/src.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ayawilhelmson/Desktop/inda-21/Projinda/src/src.csproj",
+        "projectUniqueName": "/home/fredrik/KTH/INDA/Projinda/src/src.csproj",
         "projectName": "src",
-        "projectPath": "/Users/ayawilhelmson/Desktop/inda-21/Projinda/src/src.csproj",
-        "packagesPath": "/Users/ayawilhelmson/.nuget/packages/",
-        "outputPath": "/Users/ayawilhelmson/Desktop/inda-21/Projinda/src/obj/",
+        "projectPath": "/home/fredrik/KTH/INDA/Projinda/src/src.csproj",
+        "packagesPath": "/home/fredrik/.nuget/packages/",
+        "outputPath": "/home/fredrik/KTH/INDA/Projinda/src/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/ayawilhelmson/.nuget/NuGet/NuGet.Config"
+          "/home/fredrik/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/162/sdk/6.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }

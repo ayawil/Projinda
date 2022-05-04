@@ -13,3 +13,11 @@
 /Users/ayawilhelmson/Desktop/inda-21/Projinda/src/obj/Debug/net6.0/src.pdb
 /Users/ayawilhelmson/Desktop/inda-21/Projinda/src/obj/Debug/net6.0/src.genruntimeconfig.cache
 /Users/ayawilhelmson/Desktop/inda-21/Projinda/src/obj/Debug/net6.0/ref/src.dll
+/home/fredrik/KTH/INDA/Projinda/src/obj/Debug/net6.0/src.csproj.AssemblyReference.cache
+/home/fredrik/KTH/INDA/Projinda/src/obj/Debug/net6.0/src.GeneratedMSBuildEditorConfig.editorconfig
+/home/fredrik/KTH/INDA/Projinda/src/obj/Debug/net6.0/src.AssemblyInfoInputs.cache
+/home/fredrik/KTH/INDA/Projinda/src/obj/Debug/net6.0/src.AssemblyInfo.cs
+/home/fredrik/KTH/INDA/Projinda/src/obj/Debug/net6.0/src.csproj.CoreCompileInputs.cache
+/home/fredrik/KTH/INDA/Projinda/src/obj/Debug/net6.0/src.dll
+/home/fredrik/KTH/INDA/Projinda/src/obj/Debug/net6.0/refint/src.dll
+/home/fredrik/KTH/INDA/Projinda/src/obj/Debug/net6.0/src.pdb
