@@ -23,7 +23,7 @@ class Picture
     public int Height()
         { return Image.Height; }
     public int Lenght()
-        { return Image.Lenght; }
+        { return Image.Width; }
     public Color GetPixel(int x, int y)
         { return Image.GetPixel(x, y); }
     public void SetPixel(int x, int y, Color color)
