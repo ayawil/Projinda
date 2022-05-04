@@ -1,16 +1,17 @@
+using System.Drawing;
 class Picture
 {
-    private bitmap image;
+    private Bitmap image;
 
     public void create(string location)
     {
         try 
         {
-            image = new bitmap(location);
+            image = new Bitmap(location);
         }
         catch(Exception)
         {
-            Console.Writeline("There was a problem saving the file.");
+            Console.WriteLine("There was a problem saving the file.");
         }
     }
 
@@ -23,6 +24,7 @@ class Picture
         { return image.height; }
     public int lenght()
         { return image.lenght; }
-    
-    
+    public Color getPixel(int x, int y)
+        { return image.getPixel(x, y); }
+
 }
