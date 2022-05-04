@@ -1,13 +1,13 @@
 using System.Drawing;
 class Picture
 {
-    private Bitmap image;
+    private Bitmap Image;
 
     public void create(string location)
     {
         try 
         {
-            image = new Bitmap(location);
+            Image = new Bitmap(location);
         }
         catch(Exception)
         {
@@ -15,16 +15,18 @@ class Picture
         }
     }
 
-    public void export()
+    public void Export()
     {
-        image.Save("export.png");
+        Image.Save("export.png");
     }
 
-    public int height()
-        { return image.height; }
-    public int lenght()
-        { return image.lenght; }
-    public Color getPixel(int x, int y)
-        { return image.getPixel(x, y); }
+    public int Height()
+        { return Image.Height; }
+    public int Lenght()
+        { return Image.Lenght; }
+    public Color GetPixel(int x, int y)
+        { return Image.GetPixel(x, y); }
+    public void SetPixel(int x, int y, Color color)
+        { Image.SetPixel(x, y, color); }
 
 }
