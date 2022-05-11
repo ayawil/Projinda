@@ -1,37 +1,27 @@
-using System.Drawing;
-class FilterPicture
-{
+public class FilterPixel {
     private Picture image;
     private int pixelSize;
-    public FilterPicture(Picture image)
+
+    public FilterPixel(Picture image)
     {
         this.image = image;
         pixelSize = 4;
 
     }
 
-    private void addFilter()
+    public void addFilter()
     {
         for (int x = 0; x < image.lenght(); x += pixelSize)
         {
             for (int y = 0; y < image.height(); y += pixelSize)
             {
-                List<Color> colors = new List<Color>();
-
+                Picture imagePart = getPart(image, pixelSize, pixelSize, x, y);
+                int color = average(imagePart);
                 for (int i = 0; i < pixelSize; i++)
                 {
                     for (int j = 0; j < pixelSize; j++)
                     {
-                        colors.Add(image.GetPixel(x + i, y + j));
-
-                    }
-                }
-                Color avrg = average(colors);
-                for (int i = 0; i < pixelSize; i++)
-                {
-                    for (int j = 0; j < pixelSize; j++)
-                    {
-                        image.SetPixel(x + i, y + j, avrg);
+                        image.setPixel(x + i, y + j, color);
                     }
                 }
 
@@ -39,22 +29,13 @@ class FilterPicture
         }
     }
 
-    private Color average(List<Color> colors)
+    private Picture getPart(Picture image, int width, int height, int x, int y){
+
+        return image;
+    }
+
+    private int average(Picture image)
     {
-        int g = 0;
-        int b = 0;
-        int r = 0;
-        foreach (Color color in colors)
-        {
-            g += color.G;
-            b += color.B;
-            r += color.R;
-        }
-        g = g / colors.Count;
-        b = b / colors.Count;
-        r = r / colors.Count;
-        return Color.FromArgb(g, b, r);
+        return 1;
     }
 }
-
-

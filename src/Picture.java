@@ -1,30 +1,30 @@
-using System.Drawing;
-class Picture
-{
-    private Bitmap image;
+import java.awt.image.BufferedImage;
 
-    public void create(string location)
+public class Picture {
+
+    private BufferedImage Image;
+
+    public void create(String location)
     {
-        try 
-        {
-            image = new Bitmap(location);
-        }
-        catch(Exception)
-        {
-            Console.WriteLine("There was a problem saving the file.");
-        }
+            //Fix intilializatiom
+                Image = new BufferedImage(200, 200, 0);
+
+        
     }
 
     public void export()
     {
-        image.Save("export.png");
+       // Image.Save("export.png");
     }
 
     public int height()
-        { return image.height; }
+    { return Image.getHeight(); }
     public int lenght()
-        { return image.lenght; }
-    public Color getPixel(int x, int y)
-        { return image.getPixel(x, y); }
+    { return Image.getWidth(); }
 
+    public int getPixel(int x, int y)
+    { return Image.getRGB(x, y); }
+
+    public void setPixel(int x, int y, int color)
+    { Image.setRGB(x, y, color); }
 }
