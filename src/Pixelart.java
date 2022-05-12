@@ -11,9 +11,8 @@ public class Pixelart extends Filter {
         pixelSize = 4;
     }
 
-    
     public void addFilter() {
-        for (int x = 0; x < image.lenght(); x += pixelSize) {
+        for (int x = 0; x < image.width(); x += pixelSize) {
             for (int y = 0; y < image.height(); y += pixelSize) {
                 Picture imagePart = getPart(image, pixelSize, x, y);
                 int color = averageRBG(imagePart);
