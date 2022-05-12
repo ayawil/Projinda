@@ -1,15 +1,18 @@
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.imageio.ImageIO;
 
 public class Picture {
 
     private BufferedImage image;
+    private String name;
 
     public void create(String location) {
-        // Fix intilializatiom
+        name = extractName(location);
+
         try {
             File importedPicture = new File(location);
             image = new BufferedImage(ImageIO.read(importedPicture).getWidth(), ImageIO.read(importedPicture).getHeight(), BufferedImage.TYPE_INT_RGB);
@@ -21,18 +24,31 @@ public class Picture {
 
     }
 
+    private String extractName(String location) {
+        StringBuilder sb = new StringBuilder();
+        Pattern pattern = Pattern.compile("\\w+\\.");
+        Matcher matcher = pattern.matcher(location);
+        if (matcher.find()) {
+            sb.append(matcher.group(0));
+            sb.deleteCharAt(sb.length() - 1);
+        }
+        else
+            sb.append(location.hashCode());
+
+        return sb.toString();
+    }
+
     public void create(BufferedImage newImage) {
         image = newImage;
     }
 
     public void export() {
         try {
-            File exportedImage = new File("export.png");
+            File exportedImage = new File(name + "_exported.png");
             ImageIO.write(image, "png", exportedImage);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        // image.Save("export.png");
     }
 
     public int height() {
