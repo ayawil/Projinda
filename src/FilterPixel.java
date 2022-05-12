@@ -13,7 +13,7 @@ public class FilterPixel {
     public void addFilter() {
         for (int x = 0; x < image.lenght(); x += pixelSize) {
             for (int y = 0; y < image.height(); y += pixelSize) {
-                Picture imagePart = getPart(image, pixelSize, pixelSize, x, y);
+                Picture imagePart = getPart(image, pixelSize, x, y);
                 int color = average(imagePart);
                 for (int i = 0; i < pixelSize; i++) {
                     for (int j = 0; j < pixelSize; j++) {
@@ -24,9 +24,8 @@ public class FilterPixel {
         }
     }
 
-    private Picture getPart(Picture image, int width, int height, int x, int y) {
-
-        return image.getSubimage(x, y, width, height);
+    private Picture getPart(Picture image, int pixelSize, int x, int y) {
+        return image.getSubimage(x, y, pixelSize);
     }
 
     private int average(Picture image) {

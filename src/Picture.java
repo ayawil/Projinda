@@ -10,6 +10,10 @@ public class Picture {
 
     }
 
+    public void create(BufferedImage newImage) {
+        Image = newImage;
+    }
+
     public void export() {
         // Image.Save("export.png");
     }
@@ -31,6 +35,9 @@ public class Picture {
     }
 
     public Picture getSubimage(int x, int y, int pixelSize) {
-        Image.getSubimage(x, y, pixelSize, pixelSize);
+        Picture tmp = new Picture();
+        tmp.create(Image.getSubimage(x, y, pixelSize, pixelSize));
+
+        return tmp;
     }
 }
