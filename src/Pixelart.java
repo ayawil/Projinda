@@ -1,12 +1,17 @@
 public class Pixelart extends Filter {
     private int pixelSize;
 
+    /**
+     * The constructor for the pixelart filter
+     * @param image the image of which to base
+     *              the pixelart of
+     */
     public Pixelart(Picture image) {
         super(image);
         pixelSize = 4;
-
     }
 
+    
     public void addFilter() {
         for (int x = 0; x < image.lenght(); x += pixelSize) {
             for (int y = 0; y < image.height(); y += pixelSize) {
