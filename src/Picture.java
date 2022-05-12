@@ -1,42 +1,59 @@
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 public class Picture {
 
-    private BufferedImage Image;
+    private BufferedImage image;
 
     public void create(String location) {
         // Fix intilializatiom
-        Image = new BufferedImage(200, 200, 0);
+        try {
+            File importedPicture = new File(location);
+            image = new BufferedImage(ImageIO.read(importedPicture).getWidth(), ImageIO.read(importedPicture).getHeight(), BufferedImage.TYPE_INT_RGB);
+            
+            image = ImageIO.read(importedPicture);
+        } catch (IOException e) {
+            //TODO: handle exception
+        }
 
     }
 
     public void create(BufferedImage newImage) {
-        Image = newImage;
+        image = newImage;
     }
 
     public void export() {
-        // Image.Save("export.png");
+        try {
+            File exportedImage = new File("export.png");
+            ImageIO.write(image, "png", exportedImage);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        // image.Save("export.png");
     }
 
     public int height() {
-        return Image.getHeight();
+        return image.getHeight();
     }
 
     public int lenght() {
-        return Image.getWidth();
+        return image.getWidth();
     }
 
     public int getPixel(int x, int y) {
-        return Image.getRGB(x, y);
+        return image.getRGB(x, y);
     }
 
     public void setPixel(int x, int y, int color) {
-        Image.setRGB(x, y, color);
+        image.setRGB(x, y, color);
     }
 
     public Picture getSubimage(int x, int y, int pixelSize) {
         Picture tmp = new Picture();
-        tmp.create(Image.getSubimage(x, y, pixelSize, pixelSize));
+        tmp.create(image.getSubimage(x, y, pixelSize, pixelSize));
 
         return tmp;
     }

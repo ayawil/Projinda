@@ -40,6 +40,10 @@ public class FilterPixel {
                 b += currentColor.getBlue();
             }
         }
+        r /= image.lenght() * image.height();
+        g /= image.lenght() * image.height();
+        b /= image.lenght() * image.height();
+        
         Color averageColor = new Color(r, g, b);
         return averageColor.getRGB();
     }
