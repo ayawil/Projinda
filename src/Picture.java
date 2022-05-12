@@ -1,5 +1,7 @@
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
+
 import javax.imageio.ImageIO;
 
 public class Picture {
@@ -13,7 +15,7 @@ public class Picture {
             image = new BufferedImage(ImageIO.read(importedPicture).getWidth(), ImageIO.read(importedPicture).getHeight(), BufferedImage.TYPE_INT_RGB);
             
             image = ImageIO.read(importedPicture);
-        } catch (Exception e) {
+        } catch (IOException e) {
             //TODO: handle exception
         }
 
@@ -24,6 +26,12 @@ public class Picture {
     }
 
     public void export() {
+        try {
+            File exportedImage = new File("export.png");
+            ImageIO.write(image, "png", exportedImage);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         // image.Save("export.png");
     }
 
