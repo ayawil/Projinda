@@ -1,4 +1,4 @@
-public class Program {
+﻿public class Program {
     public static void main(String[] args) {
         Picture image = new Picture();
 
@@ -8,6 +8,9 @@ public class Program {
         switch (args[0]) {
             case "pixel":
                 filter = new Pixelart(image);
+                break;
+            case "grayscale":
+                filter = new Grayscale(image);
                 break;
             default:
                 System.out.println("Incorrect arguments");
