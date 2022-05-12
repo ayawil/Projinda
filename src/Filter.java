@@ -20,7 +20,7 @@ abstract public class Filter {
     /**
      * A protected method for getting a part of an image
      * @param image the image of which to get part of
-     * @param pixelSize the lenght of square of which to 
+     * @param pixelSize the width of square of which to 
      *                  get from the image
      * @param x the position of the square on the x-axis
      * @param y the position of the square on the y-axis
@@ -41,7 +41,7 @@ abstract public class Filter {
         int r = 0;
         int g = 0;
         int b = 0;
-        for (int x = 0; x < image.lenght(); x++) {
+        for (int x = 0; x < image.width(); x++) {
             for (int y = 0; y < image.height(); y++) {
                 Color currentColor = new Color(image.getPixel(x, y));
                 r += currentColor.getRed();
@@ -49,9 +49,9 @@ abstract public class Filter {
                 b += currentColor.getBlue();
             }
         }
-        r /= image.lenght() * image.height();
-        g /= image.lenght() * image.height();
-        b /= image.lenght() * image.height();
+        r /= image.width() * image.height();
+        g /= image.width() * image.height();
+        b /= image.width() * image.height();
         
         Color averageColor = new Color(r, g, b);
         return averageColor.getRGB();

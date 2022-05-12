@@ -9,19 +9,35 @@ public class Picture {
 
     private BufferedImage image;
     private String name;
+    private int height;
+    private int width;
 
+    /**
+     * Adds an image to the the Picture from a file path
+     * @param location the path to the picture
+     */
     public void create(String location) {
         name = extractName(location);
 
         try {
             File importedPicture = new File(location);
-            image = new BufferedImage(ImageIO.read(importedPicture).getWidth(), ImageIO.read(importedPicture).getHeight(), BufferedImage.TYPE_INT_RGB);
-            
+            image = new BufferedImage(ImageIO.read(importedPicture).getWidth(), 
+            ImageIO.read(importedPicture).getHeight(), BufferedImage.TYPE_INT_RGB);
+            height = image.getHeight();
+            width = image.getHeight();
+
             image = ImageIO.read(importedPicture);
         } catch (IOException e) {
             //TODO: handle exception
         }
+    }
 
+    /**
+     * Adds an image to the the Picture from a BufferedImage
+     * @param newImage the BufferedImage
+     */
+    public void create(BufferedImage newImage) {
+        image = newImage;
     }
 
     private String extractName(String location) {
@@ -38,10 +54,9 @@ public class Picture {
         return sb.toString();
     }
 
-    public void create(BufferedImage newImage) {
-        image = newImage;
-    }
-
+    /**
+     * Converts the Picture to a png and exports it
+     */
     public void export() {
         try {
             File exportedImage = new File(name + "_exported.png");
@@ -51,22 +66,51 @@ public class Picture {
         }
     }
 
+    /**
+     * Gets the height of the Picture
+     * @return the height
+     */
     public int height() {
-        return image.getHeight();
+        return height;
     }
 
-    public int lenght() {
-        return image.getWidth();
+    /**
+     * Gets the width of the Picture
+     * @return the width
+     */
+    public int width() {
+        return width;
     }
 
+    /**
+     * Gets the RGB value of a pixel at a certain x, y location
+     * @param x the location of the pixel on the x-axis
+     * @param y the location of the pixel on the y-axis
+     * @return the RBG value as an integer
+     */
     public int getPixel(int x, int y) {
         return image.getRGB(x, y);
     }
 
+    /**
+     * Sets the RGB value of a pixel at a certain x, y location
+     * @param x the location of the pixel on the x-axis
+     * @param y the location of the pixel on the y-axis
+     * @param color the color the pixel is to be set as
+     * @return the RBG value as an integer
+     */
     public void setPixel(int x, int y, int color) {
         image.setRGB(x, y, color);
     }
 
+    /**
+     * Creates a Picture from a part of the Picture, as a sub-picture
+     * @param x the position of the square on the x-axis
+     * @param y the position of the square on the y-axis
+     * @param pixelSize the width of square of which to 
+     *                  get from the image
+     * @return the sub-picture
+     */
     public Picture getSubimage(int x, int y, int pixelSize) {
         Picture tmp = new Picture();
         tmp.create(image.getSubimage(x, y, pixelSize, pixelSize));
