@@ -14,8 +14,7 @@ public class Program {
                 return;
         }
 
-        // String location = args[1];
-        String location = "Skog.jpeg";
+        String location = args[1];
         if (!image.create(location)) {
             System.out.println("Incorrect path");
             return;
