@@ -15,9 +15,17 @@
         }
 
         String location = args[1];
-        image.create(location);
+        if (!image.create(location)) {
+            System.out.println("Incorrect path");
+            return;
+        }
         
         filter.addFilter();
-        image.export();
+        if (image.export())
+            System.out.println("Image exported correctly");
+        else {
+            System.out.println("Image not exported correctly");
+            return;
+        }
     }
 }
