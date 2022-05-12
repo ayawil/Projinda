@@ -9,26 +9,23 @@ public class Picture {
 
     private BufferedImage image;
     private String name;
-    private int height;
-    private int width;
 
     /**
      * Adds an image to the the Picture from a file path
      * @param location the path to the picture
      */
-    public void create(String location) {
+    public boolean create(String location) {
         name = extractName(location);
 
         try {
             File importedPicture = new File(location);
             image = new BufferedImage(ImageIO.read(importedPicture).getWidth(), 
             ImageIO.read(importedPicture).getHeight(), BufferedImage.TYPE_INT_RGB);
-            height = image.getHeight();
-            width = image.getHeight();
 
             image = ImageIO.read(importedPicture);
+            return true;
         } catch (IOException e) {
-            //TODO: handle exception
+            return false;
         }
     }
 
@@ -36,8 +33,9 @@ public class Picture {
      * Adds an image to the the Picture from a BufferedImage
      * @param newImage the BufferedImage
      */
-    public void create(BufferedImage newImage) {
+    public boolean create(BufferedImage newImage) {
         image = newImage;
+        return true;
     }
 
     private String extractName(String location) {
@@ -57,12 +55,14 @@ public class Picture {
     /**
      * Converts the Picture to a png and exports it
      */
-    public void export() {
+    public boolean export() {
         try {
             File exportedImage = new File(name + "_exported.png");
             ImageIO.write(image, "png", exportedImage);
+            return true;
         } catch (IOException e) {
             e.printStackTrace();
+            return false;
         }
     }
 
@@ -71,7 +71,7 @@ public class Picture {
      * @return the height
      */
     public int height() {
-        return height;
+        return image.getHeight();
     }
 
     /**
@@ -79,7 +79,7 @@ public class Picture {
      * @return the width
      */
     public int width() {
-        return width;
+        return image.getWidth();
     }
 
     /**

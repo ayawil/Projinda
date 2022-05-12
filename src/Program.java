@@ -1,14 +1,32 @@
-﻿public class Program {
+public class Program {
     public static void main(String[] args) {
         Picture image = new Picture();
 
         // System.out.println("Image processor started correctly, please ");
 
-        String location = "Skog.jpeg";
-        image.create(location);
+        Filter filter;
+        switch (args[0]) {
+            case "pixel":
+                filter = new Pixelart(image);
+                break;
+            default:
+                System.out.println("Incorrect arguments");
+                return;
+        }
 
-        Filter pixelArt = new Pixelart(image);
-        pixelArt.addFilter();
-        image.export();
+        // String location = args[1];
+        String location = "Skog.jpeg";
+        if (!image.create(location)) {
+            System.out.println("Incorrect path");
+            return;
+        }
+        
+        filter.addFilter();
+        if (image.export())
+            System.out.println("Image exported correctly");
+        else {
+            System.out.println("Image not exported correctly");
+            return;
+        }
     }
 }
