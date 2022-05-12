@@ -9,8 +9,6 @@ public class Picture {
 
     private BufferedImage image;
     private String name;
-    private int height;
-    private int width;
 
     /**
      * Adds an image to the the Picture from a file path
@@ -23,8 +21,6 @@ public class Picture {
             File importedPicture = new File(location);
             image = new BufferedImage(ImageIO.read(importedPicture).getWidth(), 
             ImageIO.read(importedPicture).getHeight(), BufferedImage.TYPE_INT_RGB);
-            height = image.getHeight();
-            width = image.getHeight();
 
             image = ImageIO.read(importedPicture);
             return true;
@@ -75,7 +71,7 @@ public class Picture {
      * @return the height
      */
     public int height() {
-        return height;
+        return image.getHeight();
     }
 
     /**
@@ -83,7 +79,7 @@ public class Picture {
      * @return the width
      */
     public int width() {
-        return width;
+        return image.getWidth();
     }
 
     /**

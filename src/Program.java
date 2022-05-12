@@ -1,4 +1,4 @@
-﻿public class Program {
+public class Program {
     public static void main(String[] args) {
         Picture image = new Picture();
 
@@ -14,7 +14,8 @@
                 return;
         }
 
-        String location = args[1];
+        // String location = args[1];
+        String location = "Skog.jpeg";
         if (!image.create(location)) {
             System.out.println("Incorrect path");
             return;
