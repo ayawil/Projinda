@@ -25,8 +25,9 @@ public class Program {
     }
 
     /**
-     * Check if the requested filter string is
-     * represented by a valid filter
+     * Check if the requested filter string is represented
+     * by a valid filter and then sets said filter as
+     * the current one
      * @param filterString the string of the chosen filter
      * @return true if it is valid, false if otherwise
      */

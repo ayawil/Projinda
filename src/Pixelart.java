@@ -11,6 +11,23 @@ public class Pixelart extends Filter {
         pixelSize = 4;
     }
 
+    /**
+     * The constructor for the pixelart filter
+     * with a custom pixel size
+     * @param image the image of which to base
+     *              the pixelart of
+     * @param pS the requested pixel size
+     */
+    public Pixelart(Picture image, int pS) {
+        super(image);
+        if (pS > 0 && pS < image.height() && pS < image.width())
+            pixelSize = pS;
+        else {
+            System.out.println("Invalid pixel size, set to default of 4");
+            pixelSize = 4;
+        }
+    }
+
     public void addFilter() {
         for (int x = 0; x < image.width(); x += pixelSize) {
             for (int y = 0; y < image.height(); y += pixelSize) {
