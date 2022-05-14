@@ -1,9 +1,9 @@
-﻿import java.io.BufferedReader;
+import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class Program {
 
-    private static String location;
+    // private static String location;
     private static Filter filter;
     private static Picture image;
 
@@ -11,17 +11,20 @@ public class Program {
         image = new Picture();
 
         // System.out.println("Image processor started correctly, please ");
-
-        switch (args[0]) {
-            case "pixel":
-                filter = new Pixelart(image);
-                location = args[1];
-                break;
-            default:
-                terminalInterface();
-                break;
+        if (args.length != 0) {
+            switch (args[0]) {
+                case "pixel":
+                    filter = new Pixelart(image);
+                    // location = args[1];
+                    addImage(args[1]);
+                    break;
+                default:
+                    System.out.println("Incorrect filter type");
+                    return;
+            }
         }
-        addImage();
+        else
+            terminalInterface();
         
         filter.addFilter();
         if (image.export())
@@ -32,20 +35,18 @@ public class Program {
         }
     }
 
-    private static void addImage() {
+    private static boolean addImage(String location) {
         if (!image.create(location)) {
             System.out.println("Incorrect path");
-            return;
+            return false;
         }
-    }
-    private static void oneLineTerminal(String tLocation, String tFilter) {
-
+        else
+            return true;
     }
 
     private static void terminalInterface() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String tFilter = "";
-        location = "";
 
         String[] filters = {"pixel", "grayscale"};
         System.out.println( "Welcome to the terminal interface! \n" + 
@@ -70,9 +71,10 @@ public class Program {
         }
 
         System.out.println( "Now please choose a picture to apply said filter on");
-        while (location == "") {
+        boolean imageSuccess = false;
+        while (!imageSuccess) {
             try {
-                location = reader.readLine();
+                imageSuccess = addImage(reader.readLine());
             } catch (Exception e) {
                 System.out.println("Incorrect path");
             }
