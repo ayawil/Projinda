@@ -19,6 +19,11 @@ public class Grayscale extends Filter{
         
     }
 
+    /**
+     * Calculates the RBG value of the Grayscale filter on a pixel
+     * @param pixel the current RGB value of the pixel
+     * @return the new RBG value
+     */
     private int getGrayscale(int pixel) {
         Color color = new Color(pixel);
         int averageRGB = (int) (0.3 * color.getRed() + 0.59 * color.getGreen() + 0.11 * color.getBlue()) / 3;
