@@ -57,7 +57,7 @@ public class Picture {
      */
     public boolean export() {
         try {
-            File exportedImage = new File(name + "_exported.png");
+            File exportedImage = new File("../Exports/" + name + "_exported.png");
             ImageIO.write(image, "png", exportedImage);
             return true;
         } catch (IOException e) {
