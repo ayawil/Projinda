@@ -26,7 +26,7 @@ public class Grayscale extends Filter{
      */
     private int getGrayscale(int pixel) {
         Color color = new Color(pixel);
-        int averageRGB = (int) (0.3 * color.getRed() + 0.59 * color.getGreen() + 0.11 * color.getBlue()) / 3;
+        int averageRGB = (int) (0.3 * color.getRed() + 0.59 * color.getGreen() + 0.11 * color.getBlue());
 
         return new Color(averageRGB, averageRGB, averageRGB).getRGB();
     }
