@@ -1,27 +1,24 @@
-import java.io.BufferedReader;
+﻿import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class Program {
-
-    // private static String location;
     private static Filter filter;
     private static Picture image;
 
     public static void main(String[] args) {
         image = new Picture();
 
-        // System.out.println("Image processor started correctly, please ");
         if (args.length != 0) {
             switch (args[0]) {
                 case "pixel":
                     filter = new Pixelart(image);
-                    // location = args[1];
-                    addImage(args[1]);
                     break;
                 default:
                     System.out.println("Incorrect filter type");
                     return;
             }
+            if (!addImage(args[1]))
+                return;
         }
         else
             terminalInterface();
@@ -35,6 +32,11 @@ public class Program {
         }
     }
 
+    /**
+     * Adds an actual image to the image which is to be handled by the program
+     * @param location the path of the image of which to the added
+     * @return true if the image was added correctly
+     */
     private static boolean addImage(String location) {
         if (!image.create(location)) {
             System.out.println("Incorrect path");
@@ -44,6 +46,9 @@ public class Program {
             return true;
     }
 
+    /**
+     * The optional terminal interface
+     */
     private static void terminalInterface() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String tFilter = "";
