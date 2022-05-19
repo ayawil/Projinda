@@ -11,7 +11,16 @@ public class Pixelart extends Filter {
         pixelSize = 4;
     }
 
-    @Override
+    /**
+     * The constructor for the pixelart filter that takes in pixel size
+     * @param image
+     * @param pixelSize
+     */
+    public Pixelart(Picture image, int pixelSize) {
+        super(image);
+        this.pixelSize = pixelSize;
+    }
+
     public void addFilter() {
         for (int x = 0; x < image.width(); x += pixelSize) {
             for (int y = 0; y < image.height(); y += pixelSize) {
