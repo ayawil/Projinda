@@ -91,6 +91,12 @@ public class Picture {
     public int getPixel(int x, int y) {
         return image.getRGB(x, y);
     }
+    /**
+     * Gets the bufferedimage 
+     */
+    public BufferedImage getImage() {
+        return image;
+    }
 
     /**
      * Sets the RGB value of a pixel at a certain x, y location
