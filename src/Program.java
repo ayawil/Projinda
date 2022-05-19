@@ -9,15 +9,7 @@ public class Program {
         image = new Picture();
 
         if (args.length != 0) {
-            switch (args[0]) {
-                case "pixel":
-                    filter = new Pixelart(image);
-                    break;
-                default:
-                    System.out.println("Incorrect filter type");
-                    return;
-            }
-            if (!addImage(args[1]))
+            if (!checkFilterType(args[0]) || !addImage(args[1]))
                 return;
         }
         else
@@ -30,6 +22,28 @@ public class Program {
             System.out.println("Image not exported correctly");
             return;
         }
+    }
+
+    /**
+     * Check if the requested filter string is represented
+     * by a valid filter and then sets said filter as
+     * the current one
+     * @param filterString the string of the chosen filter
+     * @return true if it is valid, false if otherwise
+     */
+    private static boolean checkFilterType(String filterString) {
+        switch (filterString) {
+            case "pixel":
+                filter = new Pixelart(image);
+                break;
+            case "grayscale":
+                filter = new Grayscale(image);
+                break;
+            default:
+                System.out.println("Incorrect filter type");
+                return false;
+        }
+        return true;
     }
 
     /**
@@ -51,7 +65,6 @@ public class Program {
      */
     private static void terminalInterface() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String tFilter = "";
 
         String[] filters = {"pixel", "grayscale"};
         System.out.println( "Welcome to the terminal interface! \n" + 
@@ -61,15 +74,7 @@ public class Program {
 
         while (filter == null) {
             try {
-                tFilter = reader.readLine();
-                switch (tFilter) {
-                    case "pixel":
-                        filter = new Pixelart(image);
-                        break;
-                    default:
-                        System.out.println("Incorrect filter type");
-                        break;
-                }
+                checkFilterType(reader.readLine());
             } catch (Exception e) {
                 System.out.println("Incorrect filter type");
             }
