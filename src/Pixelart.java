@@ -32,4 +32,25 @@ public class Pixelart extends Filter {
             }
         }
     }
+
+    /**
+     * Changes the pixel size of the pixelized version
+     * @param args  should only be one string, is the string
+     *              version of the of the requested int size
+     */
+    @Override
+    public void changeSettings(String[] args) {
+        int pS;
+        
+        try {
+            pS = Integer.parseInt(args[0]);
+            if (pS > 0 && pS < image.height() && pS < image.width())
+                pixelSize = pS;
+            else
+                throw new NumberFormatException();
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid pixel size, set to default of 4");
+            return;
+        }        
+    }
 }

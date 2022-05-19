@@ -18,6 +18,12 @@ abstract public class Filter {
     abstract public void addFilter();
 
     /**
+     * An abstract method for changing settings, if
+     * available, in each filter
+     */
+    abstract public void changeSettings(String[] args);
+
+    /**
      * A protected method for getting a part of an image
      * @param image the image of which to get part of
      * @param pixelSize the width of square of which to 

@@ -10,6 +10,7 @@ public class Grayscale extends Filter{
         super(image);
     }
 
+    @Override
     public void addFilter() {
         for (int x = 0; x < image.width(); x++) {
             for (int y = 0; y < image.height(); y++) {
@@ -26,9 +27,15 @@ public class Grayscale extends Filter{
      */
     private int getGrayscale(int pixel) {
         Color color = new Color(pixel);
-        int averageRGB = (int) (0.3 * color.getRed() + 0.59 * color.getGreen() + 0.11 * color.getBlue()) / 3;
+        int averageRGB = (int) (0.3 * color.getRed() + 0.59 * color.getGreen() + 0.11 * color.getBlue());
 
         return new Color(averageRGB, averageRGB, averageRGB).getRGB();
+    }
+
+    @Override
+    public void changeSettings(String[] args) {
+        // TODO Auto-generated method stub
+        
     }
     
 }
