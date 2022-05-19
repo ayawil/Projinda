@@ -104,8 +104,10 @@ public class GUI implements ActionListener {
             pixelSize = pixelSizeSlider.getValue();
             filter = new Pixelart(image, pixelSize);
             filter.addFilter();
+            ImageIcon icon = new ImageIcon(image.getImage());
+            p2.remove(imageIcon);
+            displayImage(icon);
         }
- 
         else if (e.getSource() == greyscale) {
         }
 
