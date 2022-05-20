@@ -1,5 +1,5 @@
-import javax.swing.*;  
-import java.awt.*;   
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -18,10 +18,11 @@ public class GUI implements ActionListener {
     private JSlider pixelSizeSlider;
     private JButton pixelate;
     private JButton greyscale;
+    private JButton reset;
     private JButton save;
     private JLabel imageIcon;
 
-    public GUI(Picture image){
+    public GUI(Picture image) {
         this.image = image;
         f = new JFrame();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,7 +30,7 @@ public class GUI implements ActionListener {
         f.setBounds(300, 90, 900, 600);
         f.setResizable(false);
         f.setLayout(null);
-       
+
         addPanels();
         addTextFeild();
         addButtons();
@@ -37,7 +38,7 @@ public class GUI implements ActionListener {
         f.setVisible(true);
     }
 
-    private void addPanels(){
+    private void addPanels() {
         p1 = new JPanel();
         p2 = new JPanel();
 
@@ -51,7 +52,7 @@ public class GUI implements ActionListener {
         p2.setBackground(Color.DARK_GRAY);
     }
 
-    private void addTextFeild(){
+    private void addTextFeild() {
         locationTextField = new JTextField();
         locationTextField.setBounds(10, 40, 100, 30);
         submit = new JButton("Submit");
@@ -61,8 +62,8 @@ public class GUI implements ActionListener {
         p1.add(submit);
     }
 
-    private void addButtons(){
-        pixelSizeSlider = new JSlider(1, 10, 5);
+    private void addButtons() {
+        pixelSizeSlider = new JSlider(1, 5, 2);
         pixelSizeSlider.setBounds(15, 70, 170, 40);
         p1.add(pixelSizeSlider);
 
@@ -70,54 +71,65 @@ public class GUI implements ActionListener {
         pixelate.addActionListener(this);
         pixelate.setBounds(40, 120, 120, 30);
         p1.add(pixelate);
+
         greyscale = new JButton("Greyscale");
+        greyscale.addActionListener(this);
         greyscale.setBounds(40, 170, 120, 30);
         p1.add(greyscale);
+
+        reset = new JButton("Reset");
+        reset.addActionListener(this);
+        reset.setBounds(40, 450, 120, 30);
+        p1.add(reset);
+
         save = new JButton("Save");
         save.setBounds(60, 500, 80, 30);
         save.addActionListener(this);
         p1.add(save);
     }
 
-    private void displayImage(ImageIcon icon){
+    private void displayImage(ImageIcon icon) {
         imageIcon = new JLabel();
         imageIcon.setIcon(icon);
-        imageIcon.setBounds(10, 5, 680, 580);
+        imageIcon.setBounds(10, 0, 680, 580);
         p2.add(imageIcon);
         f.revalidate();
         f.repaint();
     }
 
-    public void actionPerformed(ActionEvent e)
-    {
+    public void actionPerformed(ActionEvent e) {
         if (e.getSource() == submit) {
             location = locationTextField.getText();
             if (!image.create(location)) {
                 System.out.println("Incorrect path");
-            }
-            else {
+            } else {
                 ImageIcon icon = new ImageIcon(location);
                 displayImage(icon);
             }
-        }
-        else if (e.getSource() == pixelate) {
+        } else if (e.getSource() == pixelate) {
             pixelSize = pixelSizeSlider.getValue();
             filter = new Pixelart(image, pixelSize);
             filter.addFilter();
             ImageIcon icon = new ImageIcon(image.getImage());
             p2.remove(imageIcon);
             displayImage(icon);
-        }
-        else if (e.getSource() == greyscale) {
-        }
-
-        else if (e.getSource() == save) {
+        } else if (e.getSource() == greyscale) {
+            filter = new Grayscale(image);
+            filter.addFilter();
+            ImageIcon icon = new ImageIcon(image.getImage());
+            p2.remove(imageIcon);
+            displayImage(icon);
+        } else if (e.getSource() == reset) {
+            image.create(location);
+            ImageIcon icon = new ImageIcon(image.getImage());
+            p2.remove(imageIcon);
+            displayImage(icon);
+        } else if (e.getSource() == save) {
             if (image.export())
-            System.out.println("Image exported correctly");
-        else {
-            System.out.println("Image not exported correctly");
-        }
+                System.out.println("Image exported correctly");
+            else {
+                System.out.println("Image not exported correctly");
+            }
         }
     }
 }
-
