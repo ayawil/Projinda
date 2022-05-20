@@ -62,7 +62,7 @@ public class GUI implements ActionListener {
     }
 
     private void addButtons() {
-        pixelSizeSlider = new JSlider(1, 10, 5);
+        pixelSizeSlider = new JSlider(1, 5, 2);
         pixelSizeSlider.setBounds(15, 70, 170, 40);
         p1.add(pixelSizeSlider);
 
@@ -74,7 +74,7 @@ public class GUI implements ActionListener {
         greyscale = new JButton("Greyscale");
         greyscale.setBounds(40, 170, 120, 30);
         p1.add(greyscale);
-        
+
         save = new JButton("Save");
         save.setBounds(60, 500, 80, 30);
         save.addActionListener(this);
@@ -84,7 +84,7 @@ public class GUI implements ActionListener {
     private void displayImage(ImageIcon icon) {
         imageIcon = new JLabel();
         imageIcon.setIcon(icon);
-        imageIcon.setBounds(10, 5, 680, 580);
+        imageIcon.setBounds(10, 0, 680, 580);
         p2.add(imageIcon);
         f.revalidate();
         f.repaint();
@@ -112,9 +112,7 @@ public class GUI implements ActionListener {
             ImageIcon icon = new ImageIcon(image.getImage());
             p2.remove(imageIcon);
             displayImage(icon);
-        }
-
-        else if (e.getSource() == save) {
+        } else if (e.getSource() == save) {
             if (image.export())
                 System.out.println("Image exported correctly");
             else {
