@@ -22,4 +22,4 @@ Simply run `java Program` in the command prompt and the program will start in a 
 
 ### GUI
 
-Run `java Program gui` or just `java Program` followed by running `gui` in the terminal interface to access the GUI. 
+Run `java Program gui` or just `java Program` followed by running `gui` in the terminal interface to access the GUI.
