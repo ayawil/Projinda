@@ -1,5 +1,11 @@
 import java.awt.Color;
 
+/**
+ * Implements the grayscale filter, removing all color
+ * from the image and converting it to black and white
+ * @author Fredrik Blomqvist
+ * @version 2022-05-20
+ */
 public class Grayscale extends Filter{
 
     /**

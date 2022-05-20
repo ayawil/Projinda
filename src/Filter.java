@@ -1,5 +1,12 @@
 import java.awt.Color;
 
+/**
+ * The abstract top Filter-class for constructing
+ * further filters
+ * @author Aya Wilhelmson
+ * @author Fredrik Blomqvist
+ * @version 2022-05-20
+ */
 abstract public class Filter {
     protected Picture image;
 

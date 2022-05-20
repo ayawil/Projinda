@@ -3,6 +3,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * The class implementing the GUI for the program
+ * @author Aya Wilhelmson
+ * @version 2022-05-20
+ */
 public class GUI implements ActionListener {
 
     private Picture image;

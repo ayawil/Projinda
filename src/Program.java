@@ -2,6 +2,12 @@
 import java.io.InputStreamReader;
 import java.security.Guard;
 
+/**
+ * The main program class for the filter applicator
+ * @author Aya Wilhelmson
+ * @author Fredrik Blomqvist
+ * @version 2022-05-20
+ */
 public class Program {
     private static Filter filter;
     private static Picture image;

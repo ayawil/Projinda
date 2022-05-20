@@ -5,6 +5,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.imageio.ImageIO;
 
+/**
+ * Implements the Picture class which stores and
+ * handles the image which the program changes
+ * @author Aya Wilhelmson
+ * @author Fredrik Blomqvist
+ * @version 2022-05-20
+ */
 public class Picture {
 
     private BufferedImage image;

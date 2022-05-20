@@ -1,3 +1,10 @@
+/**
+ * Implements the pixelart filter which pixelizes the 
+ * image, effectively lowering the resolution
+ * @author Aya Wilhelmson
+ * @author Fredrik Blomqvist
+ * @version 2022-05-20
+ */
 public class Pixelart extends Filter {
     private int pixelSize;
 
