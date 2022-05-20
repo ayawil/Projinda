@@ -18,6 +18,7 @@ public class GUI implements ActionListener {
     private JSlider pixelSizeSlider;
     private JButton pixelate;
     private JButton greyscale;
+    private JButton reset;
     private JButton save;
     private JLabel imageIcon;
 
@@ -72,8 +73,14 @@ public class GUI implements ActionListener {
         p1.add(pixelate);
 
         greyscale = new JButton("Greyscale");
+        greyscale.addActionListener(this);
         greyscale.setBounds(40, 170, 120, 30);
         p1.add(greyscale);
+
+        reset = new JButton("Reset");
+        reset.addActionListener(this);
+        reset.setBounds(40, 450, 120, 30);
+        p1.add(reset);
 
         save = new JButton("Save");
         save.setBounds(60, 500, 80, 30);
@@ -109,6 +116,11 @@ public class GUI implements ActionListener {
         } else if (e.getSource() == greyscale) {
             filter = new Grayscale(image);
             filter.addFilter();
+            ImageIcon icon = new ImageIcon(image.getImage());
+            p2.remove(imageIcon);
+            displayImage(icon);
+        } else if (e.getSource() == reset) {
+            image.create(location);
             ImageIcon icon = new ImageIcon(image.getImage());
             p2.remove(imageIcon);
             displayImage(icon);
